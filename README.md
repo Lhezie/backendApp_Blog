@@ -145,7 +145,7 @@ BACKENDAPP_BLOG/
 | Method | Endpoint       | Description             |
 |--------|----------------|-------------------------|
 | POST   | `/api/users/signup` | User signup            |
-| POST   | `/api/users/login`  | User login             |
+| POST   | `/api/users/sigin`  | User login             |
 
 ### **Blogs**
 | Method | Endpoint       | Description             |
