@@ -23,8 +23,8 @@ Before running this application, ensure you have the following installed:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/BlogApp-backend.git
-cd BlogApp-backend
+git clone https://github.com/your-username/BackendApp_Blog.git
+cd BackendApp_Blog
 ```
 
 ### **2. Install Dependencies**
@@ -38,10 +38,54 @@ Create a `.env` file in the root directory and add the following variables:
 ```
 MONGO_URI=<your-mongodb-connection-string>
 JWT_SECRET=<your-jwt-secret>
-PORT=3000
+PORT=6000
+JWT_EXPIRATION=1h
 ```
 
 Replace `<your-mongodb-connection-string>` and `<your-jwt-secret>` with your values.
+
+
+Here’s the "Set Up the Database" section formatted and ready to copy:
+
+
+
+## **3. Set Up the Database
+
+### Create Migrations
+To create a new migration:
+```bash
+npx migrate-mongoose create <migration-name> -d "<MONGO_URI>"
+```
+
+**Example**:
+```bash
+npx migrate-mongoose create create_blog -d "mongodb+srv://name:pass@cluster0.mongodb.net/mydatabase?retryWrites=true&w=majority"
+```
+
+### List Available Migrations
+To list all available migrations:
+```bash
+npx migrate-mongoose -d "<MONGO_URI>" list
+```
+
+### Run Migrations
+To run a specific migration:
+```bash
+npx migrate-mongoose -d "<MONGO_URI>" up <migration-name>
+```
+
+**Example**:
+```bash
+npx migrate-mongoose -d "mongodb+srv://name:pass@cluster0.mongodb.net/mydatabase?retryWrites=true&w=majority" up create_blog
+```
+
+To run all pending migrations:
+```bash
+npx migrate-mongoose -d "<MONGO_URI>" up
+```
+
+--- 
+
 
 ### **4. Start the Application**
 #### Development Mode
@@ -53,7 +97,7 @@ npm run dev
 npm start
 ```
 
----
+
 
 ## **Project Structure**
 ```plaintext
@@ -139,20 +183,25 @@ You can use tools like [Thunder Client](https://www.thunderclient.io/) or [Postm
 
 ---
 
-## **License**
-This project is licensed under the MIT License. Feel free to use and modify it as needed.
 
----
+## Additional Notes  
 
-## **Contributing**
-If you wish to contribute, fork the repository and submit a pull request with your changes.
+- Use `nodemon` for development to enable automatic restarts when files change:  
+  ```bash  
+  npm install -g nodemon  
+  nodemon  
+  ```  
 
----
+- Ensure your MongoDB Atlas cluster is accessible by allowing IP addresses or setting `0.0.0.0/0` for unrestricted access (not recommended for production).  
+
+- Refer to the [migrate-mongoose documentation](https://www.npmjs.com/package/migrate-mongoose) for advanced usage.  
+
+---  
 
 ## **Contact**
 For any questions or support, contact:
 
-- **Name:** [Your Name]
-- **Email:** [your-email@example.com]
-- **GitHub:** [https://github.com/your-username]
+- **Name:** Elizabeth E.
+- **Email:** [lizziliana@gmail.com]
+- **GitHub:** [https://github.com/lizziliana]
 
