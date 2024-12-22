@@ -102,17 +102,33 @@ npm start
 ## **Project Structure**
 ```plaintext
 .
-├── controllers
+BACKENDAPP_BLOG/
+├── config/
+├── controllers/
 │   ├── authController.js
-├── models
+│   ├── blogController.js
+├── middleware/
+│   ├── authMiddleware.js
+├── migrations/
+│   ├── 17347827290252-blog.js
+│   ├── 1734782783888-users.js
+├── models/
+│   ├── Blog.js
 │   ├── User.js
-├── routes
-│   ├── authRoutes.js
-│   ├── blogRoutes.js
-├── app.js
-├── db.js
-├── package.json
+├── node_modules/ (generated after installing dependencies)
+├── routes/
+├── test/
+│   ├── blog.test.js
+│   ├── user.test.js
+├── utils/
 ├── .env
+├── .gitignore
+├── app.js
+├── generateSecret.js
+├── initMongoose.js
+├── jestConfig.js
+├── package-lock.json
+├── package.json
 ```
 
 ### Key Files
